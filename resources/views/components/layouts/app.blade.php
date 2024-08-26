@@ -15,6 +15,10 @@
 
         }
 
+        .form-outline .form-control:focus~.form-label{
+            color: #ff9400 !important;
+        }
+
         @media (min-width: 768px) {
             .gradient-form {
                 height: 100vh !important;
@@ -52,14 +56,14 @@
                                         <p class="text-light">Por favor, logue na sua conta</p>
 
                                         <div class="form-outline mb-4">
-                                            <input type="email" id="form2Example11" class="form-control"
-                                                placeholder="Phone number or email address" />
-                                            <label class="form-label" for="form2Example11">Username</label>
+                                            <input type="email" id="email" class="form-control"
+                                                placeholder="Digite seu email" />
+                                            <label class="form-label" for="email">E-mail</label>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="form2Example22" class="form-control" />
-                                            <label class="form-label" for="form2Example22">Password</label>
+                                            <input type="password" id="password" class="form-control" />
+                                            <label class="form-label" for="password">Senha</label>
                                         </div>
 
                                         <div class="text-center pt-1 mb-5 pb-1">
