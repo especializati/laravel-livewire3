@@ -8,5 +8,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', Login::class);
-Route::get('/new', Create::class);
+Route::get('/login', Login::class)->name('user.login');
+Route::get('/new', Create::class)->name('user.new');

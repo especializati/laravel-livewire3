@@ -11,6 +11,8 @@ class Create extends Component
     public string $email = '';
     public string $password = '';
 
+    public string $showPassword = '';
+
 
     public function actionClick(): void
     {
@@ -19,7 +21,7 @@ class Create extends Component
 
     public function actionKeyDown(): void
     {
-        dd('Action KeyDown');
+        $this->showPassword = $this->password;
     }
 
     public function actionKeyUp(): void
@@ -35,6 +37,26 @@ class Create extends Component
     public function actionDoubleClick(): void
     {
         dd('Action DoubleClick');
+    }
+
+    public function actionPrevent(): void
+    {
+        dd('Action prevent');
+    }
+
+    public function actionClickOutside(): void
+    {
+        dd('Action Click Outside');
+    }
+
+    public function actionDocument(): void
+    {
+        dd('Action Document');
+    }
+
+    public function actionResize(): void
+    {
+        dd('Action resize');
     }
 
     public function render()
