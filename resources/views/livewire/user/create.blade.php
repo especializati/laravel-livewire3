@@ -46,7 +46,7 @@
         <ul>
             @foreach ($users as $user)
                 <li class="my-4" wire:key="{{ $user->id }}">
-                    {{ $user->name }} <button type="button" wire:click="delete({{ $user }})" class="btn btn-primary">Excluir</button>
+                    {{ $user->name }} <button type="button" wire:click="delete({{ $user }})" wire:confirm="Voce realmente deseja excluir esse usuário?" class="btn btn-primary">Excluir</button>
                 </li>
             @endforeach
         </ul>
