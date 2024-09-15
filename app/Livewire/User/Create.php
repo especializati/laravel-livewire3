@@ -2,6 +2,8 @@
 
 namespace App\Livewire\User;
 
+use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
 class Create extends Component
@@ -12,6 +14,13 @@ class Create extends Component
     public string $password = '';
 
     public string $showPassword = '';
+
+    public Collection $users;
+
+    public function mount()
+    {
+        $this->users = User::all();
+    }
 
 
     public function actionClick(): void
@@ -57,6 +66,15 @@ class Create extends Component
     public function actionResize(): void
     {
         dd('Action resize');
+    }
+
+    public function delete(User $user): void
+    {
+        $user->delete();
+        $this->users = $user->all();
+        /*$this->users = array_filter($this->users, function($user) use ($id){
+            return $user['id'] !== $id;+
+        });*/
     }
 
     public function render()
