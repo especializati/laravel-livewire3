@@ -77,6 +77,12 @@ class Create extends Component
         });*/
     }
 
+    public function save(): void
+    {
+        sleep(10);
+        dd('salvando usuário');
+    }
+
     public function render()
     {
         return view('livewire.user.create');
