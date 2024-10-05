@@ -3,6 +3,8 @@
         teste
         <p class="text-light">Por favor, logue na sua conta</p>
 
+        <h2 x-init="$el.innerHTML = await $wire.getCountUsers()"></h2>
+
         <div class="form-outline mb-4">
             <input type="email" id="email" class="form-control" placeholder="Digite seu email" wire:model="email" />
             <label class="form-label" for="email">E-mail</label>
@@ -21,9 +23,9 @@
             <a class="text-light" href="#!">Forgot password?</a>
         </div>
 
-        <div class="d-flex align-items-center justify-content-center pb-4">
+        <div class="d-flex align-items-center justify-content-center pb-4" x-data="{teste: 'EspecializaTI'}">
             <p class="mb-0 me-2 text-light">Crie sua conta</p>
-            <button x-on:click="$wire.set('id',50)" type="button" class="btn btn-warning gradient-custom-2">Criar
+            <button x-on:click="$wire.actionAlpine(teste)" type="button" class="btn btn-warning gradient-custom-2">Criar
                 Nova</button>
         </div>
 

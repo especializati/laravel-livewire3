@@ -2,6 +2,7 @@
 
 namespace App\Livewire\User;
 
+use App\Models\User;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
@@ -32,6 +33,18 @@ class Login extends Component
     public function emailUpper(): string
     {
         return strtoupper($this->email);
+    }
+
+    public function actionAlpine(string $teste): void
+    {
+        dd($teste);
+    }
+
+    public function getCountUsers(): string
+    {
+        $qtd = User::count();
+
+        return "Quantidade de usuários: {$qtd}";
     }
 
     public function salvar(): void
