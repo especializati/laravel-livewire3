@@ -3,7 +3,7 @@
         teste
         <p class="text-light">Por favor, logue na sua conta</p>
 
-        <h2 x-init="$el.innerHTML = await $wire.getCountUsers()"></h2>
+        <livewire:user.user-count />
 
         <div class="form-outline mb-4">
             <input type="email" id="email" class="form-control" placeholder="Digite seu email" wire:model="email" />
