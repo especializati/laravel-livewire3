@@ -19,7 +19,7 @@ class Create extends Component
 
     public function mount()
     {
-        $this->users = User::all();
+        $this->getAllUsers();
     }
 
 
@@ -77,10 +77,20 @@ class Create extends Component
         });*/
     }
 
+    private function getAllUsers(): void
+    {
+        $this->users = User::all();
+    }
+
     public function save(): void
     {
-        sleep(10);
-        dd('salvando usuário');
+        //request()->all();
+
+        sleep(3);
+        $created = User::create($this->all());
+
+        if($created) $this->getAllUsers();
+
     }
 
     public function render()
