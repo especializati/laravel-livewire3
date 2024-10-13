@@ -45,9 +45,9 @@ class CreateForm extends Form
             'password' => [
                 'required',
                 Password::min(5)
-                ->max(15)
-                ->numbers()
-                ->symbols()
+                    ->max(15)
+                    ->numbers()
+                    ->symbols()
             ],
         ];
     }
@@ -56,7 +56,13 @@ class CreateForm extends Form
     {
 
         sleep(3);
-        return User::create($this->validate()) ? true : false;
 
+        $this->validate();
+
+        if (User::create($this->pull())) {
+            return true;
+        }
+
+        return false;
     }
 }
