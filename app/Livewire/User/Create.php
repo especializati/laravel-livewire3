@@ -2,16 +2,16 @@
 
 namespace App\Livewire\User;
 
+use App\Livewire\Forms\User\CreateForm;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
 class Create extends Component
 {
-    public string $document = '';
-    public string $name = '';
-    public string $email = '';
-    public string $password = '';
+    
+
+    public CreateForm $form;
 
     public string $showPassword = '';
 
@@ -87,7 +87,7 @@ class Create extends Component
         //request()->all();
 
         sleep(3);
-        $created = User::create($this->all());
+        $created = User::create($this->form->validate());
 
         if($created) $this->getAllUsers();
 

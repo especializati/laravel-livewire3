@@ -3,33 +3,42 @@
         <p class="text-light">Por favor, logue na sua conta</p>
 
         <div class="form-outline mb-4">
-            <input type="text" id="name" class="form-control" wire:model="name"
-                 />
+            <input type="text" id="name" class="form-control" wire:model="form.name" />
             <label class="form-label" for="name">Nome</label>
+            @error('form.name')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
 
 
         <div class="form-outline mb-4">
-            <input type="text" id="document" class="form-control" wire:model="document"
-                 />
+            <input type="text" id="document" class="form-control" wire:model="form.document" />
             <label class="form-label" for="document">Documento</label>
+            @error('form.document')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-outline mb-4">
             <input type="email" id="email" class="form-control" placeholder="Digite seu email"
-                wire:model="email" />
+                wire:model="form.email" />
             <label class="form-label" for="email">E-mail</label>
+            @error('form.email')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-outline mb-4">
-            <input type="password" id="password" class="form-control" wire:model="password"
-                wire:keydown.throttle.2000ms="actionKeyDown" />
+            <input type="password" id="password" class="form-control" wire:model="form.password" />
             <label class="form-label" for="password">Senha</label>
+            @error('form.password')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="text-center pt-1 mb-5 pb-1">
             <button class="btn btn-warning btn-block fa-lg gradient-custom-2 mb-3" type="submit">Criar
-                <div  wire:loading class="spinner-border spinner-border-sm" role="status">
+                <div wire:loading class="spinner-border spinner-border-sm" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </button>
