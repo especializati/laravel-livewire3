@@ -84,13 +84,7 @@ class Create extends Component
 
     public function save(): void
     {
-        //request()->all();
-
-        sleep(3);
-        $created = User::create($this->form->validate());
-
-        if($created) $this->getAllUsers();
-
+        if($this->form->create()) $this->getAllUsers();
     }
 
     public function render()
