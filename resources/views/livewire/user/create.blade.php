@@ -12,7 +12,9 @@
 
 
         <div class="form-outline mb-4">
-            <input type="text" id="document" class="form-control" wire:model="form.document" />
+            <input type="text" id="document" class="form-control" wire:model.live.throttle.2000ms="form.document" />
+            <!--<input type="text" id="document" class="form-control" wire:model.live.debounce.300ms="form.document" />-->
+            <!--<input type="text" id="document" class="form-control" wire:model.blur="form.document" />-->
             <label class="form-label" for="document">Documento</label>
             @error('form.document')
                 <p class="text-danger">{{ $message }}</p>

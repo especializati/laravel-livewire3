@@ -10,9 +10,9 @@ use Livewire\Form;
 
 class CreateForm extends Form
 {
-    //#[Validate('required', message: 'O campo CPF é requerido')]
-    //#[Validate('min:14', message: 'O campo CPF precisa ter no minimo 14 caracters')]
-    //#[Validate('max:14', message: 'O campo CPF precisa ter no máximo 14 caracters')]
+    #[Validate('required', message: 'O campo CPF é requerido')]
+    #[Validate('min:14', message: 'O campo CPF precisa ter no minimo 14 caracters')]
+    #[Validate('max:14', message: 'O campo CPF precisa ter no máximo 14 caracters')]
     public string $document = '';
     //#[Validate('required|min:4|max:255')]
     public string $name = '';
@@ -27,11 +27,11 @@ class CreateForm extends Form
     public function rules(): array
     {
         return [
-            'document' => [
+            /*'document' => [
                 'required',
                 'min:14',
                 'max:14',
-            ],
+            ],*/
             'name' => [
                 'required',
                 'min:4',
