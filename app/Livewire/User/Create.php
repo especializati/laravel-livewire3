@@ -5,6 +5,7 @@ namespace App\Livewire\User;
 use App\Livewire\Forms\User\CreateForm;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Request;
 use Livewire\Component;
 
 class Create extends Component
@@ -17,9 +18,35 @@ class Create extends Component
 
     public Collection $users;
 
-    public function mount()
+    public int $contador = 0;
+
+    public string $nameAux = '';
+
+    public function mount(User $user)
     {
-        $this->getAllUsers();
+        $this->users = $user->all();
+        //$this->getAllUsers();
+    }
+
+    public function boot()
+    {   
+        $this->contador += 1;
+    }
+
+
+    public function updating($property, $value)
+    {
+        if($property === 'form.name' && Request::method() == 'POST'){
+            $this->nameAux = strtoupper($value);
+        }
+    }
+
+
+    public function updated($property, $value)
+    {
+        if($property === 'form.name' && Request::method() == 'POST'){
+            $this->nameAux = strtoupper($value)."Teste";
+        }
     }
 
 

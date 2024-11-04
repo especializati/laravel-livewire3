@@ -2,6 +2,7 @@
     <form wire:submit.prevent="save">
         <p class="text-light">Por favor, logue na sua conta</p>
 
+        <h3>Nome UpperCase: {{ $nameAux }}</h3>
         <div class="form-outline mb-4">
             <x-forms.input name="form.name" placeholder="Digite seu nome" label="Nome"/>
         </div>
@@ -29,7 +30,7 @@
         <div class="d-flex align-items-center justify-content-center pb-4">
             <button type="button" class="btn btn-warning gradient-custom-2">Logue na sua conta</button>
         </div>
-
+        <h1>Contador: {{ $contador }}</h1>
         <ul>
             @foreach ($users as $user)
                 <li class="my-4" wire:key="{{ $user->id }}">
