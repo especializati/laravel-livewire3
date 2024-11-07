@@ -49,6 +49,16 @@ class Create extends Component
         }
     }
 
+    public function rendering($view, $data)
+    {
+        $this->form->name = 'Luan Martins Especializa';
+    }
+
+    public function rendered($view, $html)
+    {
+        $this->form->name = 'Carlos Especializa';
+    }
+
 
     public function actionClick(): void
     {
