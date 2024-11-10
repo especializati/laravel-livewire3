@@ -2,7 +2,12 @@
     <form wire:submit.prevent="save">
         <p class="text-light">Por favor, logue na sua conta</p>
 
-        <h3>Nome UpperCase: {{ $nameAux }}</h3>
+        <h1>Status:{{ $this->message }}</h1>
+
+        @php
+            var_dump($arrayTeste);
+        @endphp
+
         <div class="form-outline mb-4">
             <x-forms.input name="form.name" placeholder="Digite seu nome" label="Nome"/>
         </div>

@@ -22,19 +22,36 @@ class Create extends Component
 
     public string $nameAux = '';
 
+    public string $message = '';
+
+    public array $arrayTeste = [1,2,3];
+
     public function mount(User $user)
     {
         $this->users = $user->all();
         //$this->getAllUsers();
     }
 
-    public function boot()
-    {   
-        $this->contador += 1;
+    public function hydrate()
+    {
+        dump('hydrate');
+        $this->message = "Componente hydrate";
     }
 
+    public function dehydrate()
+    {
+        $this->arrayTeste = [1];
+        //dump('dehydrate');
+        //$this->message = 'Componente dehydrate';
+    }
 
-    public function updating($property, $value)
+    /*public function boot()
+    {   
+        $this->contador += 1;
+    }*/
+
+
+    /*public function updating($property, $value)
     {
         if($property === 'form.name' && Request::method() == 'POST'){
             $this->nameAux = strtoupper($value);
@@ -57,7 +74,7 @@ class Create extends Component
     public function rendered($view, $html)
     {
         $this->form->name = 'Carlos Especializa';
-    }
+    }*/
 
 
     public function actionClick(): void
